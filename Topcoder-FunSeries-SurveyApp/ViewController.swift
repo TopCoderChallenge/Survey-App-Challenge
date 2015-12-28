@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var titleData :[String] = [];
     var i: Int = 0;
     var flag: Bool = false;
+    var tool:Tool?;
 
     @IBOutlet var SurveyTableSearchBar: UISearchBar!;
     @IBOutlet var Label: UILabel!;
@@ -29,10 +30,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad();
         SurveyTable.delegate = self;
         SurveyTable.dataSource = self;
-        
+        tool = Tool.instance();
         if (InternetRequest.instance().checkInternetAvailable()) {
-            let JSONData:NSData = getJSON("http://www.mocky.io/v2/560920cc9665b96e1e69bb46");
-            let tmpData: NSArray = parseJSON(JSONData);
+            let JSONData:NSData = tool!.getJSONFromRemote("http://www.mocky.io/v2/560920cc9665b96e1e69bb46");
+            let tmpData: NSArray = tool!.parseJSON(JSONData);
             updateCoreData(tmpData);
         }
         tableData = fetchCoreData();
@@ -50,21 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         SurveyTable.reloadData();
     }
     
-    //MARK: - JSON Parsing and API hit functions
-    func getJSON(urlToRequest: String) -> NSData {
-        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!;
-    }
     
-    
-    func parseJSON(inputData: NSData) -> NSArray {
-        var data: NSArray = [];
-        do {
-            data = (try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers)) as! NSArray;
-        }
-        catch {}
-        
-        return data;
-    }
     
     //MARK: - Core Data process part
     func updateCoreData(data: NSArray) {
@@ -170,6 +157,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableData.removeAtIndex(indexPath.row);
         SurveyTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left);
     }
+    
+    func tableView(SurveyTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell: Cell = SurveyTable.cellForRowAtIndexPath(indexPath) as! Cell;
+        self.performSegueWithIdentifier("desc", sender: cell);
+    }
+    
+    //MARK: - Send value to destination viewcontroller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationController: DescriptionViewController = segue.destinationViewController as! DescriptionViewController;
+        destinationController.itemId = (sender as! Cell).id;
+    }
+    
 }
 
 
