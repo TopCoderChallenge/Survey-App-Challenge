@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0131F81C5A26FD00BEBC25 /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0131F71C5A26FD00BEBC25 /* BaseProtocol.swift */; };
 		9F56A9E51C22D3170030725A /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56A9E41C22D3170030725A /* DescriptionViewController.swift */; };
 		9F6041C91BF440DA00DDE459 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6041C81BF440DA00DDE459 /* CoreData.framework */; };
 		9F6042091BF4446B00DDE459 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F6042071BF4446B00DDE459 /* Data.xcdatamodeld */; };
 		9F60420F1BF4491200DDE459 /* SurveyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F60420E1BF4491200DDE459 /* SurveyItem.swift */; };
 		9F6ABC551BFC747500A199A2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6ABC541BFC747500A199A2 /* Reachability.swift */; };
+		9F8F233B1C4E64DF003D20C3 /* SurveyQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8F233A1C4E64DF003D20C3 /* SurveyQuestionViewController.swift */; };
 		9F972C4A1C22F21E008C4CD8 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F972C491C22F21E008C4CD8 /* Tool.swift */; };
 		9FB933C71BF5FB0D00CA4B22 /* InternetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB933C61BF5FB0D00CA4B22 /* InternetRequest.swift */; };
 		9FB933CA1BF6009B00CA4B22 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB933C91BF6009B00CA4B22 /* cell.swift */; };
 		9FB933CC1BF60A1F00CA4B22 /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */; };
+		9FBED4701C57A5BD0000EE24 /* SurveyAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBED46F1C57A5BD0000EE24 /* SurveyAnswer.swift */; };
 		EE7E9AC41BBA734900391478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E9AC31BBA734900391478 /* AppDelegate.swift */; };
 		EE7E9AC61BBA734900391478 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E9AC51BBA734900391478 /* ViewController.swift */; };
 		EE7E9AC91BBA734900391478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7E9AC71BBA734900391478 /* Main.storyboard */; };
@@ -36,15 +39,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F0131F71C5A26FD00BEBC25 /* BaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
 		9F56A9E41C22D3170030725A /* DescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		9F6041C81BF440DA00DDE459 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9F6042081BF4446B00DDE459 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		9F60420E1BF4491200DDE459 /* SurveyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyItem.swift; path = ../SurveyItem.swift; sourceTree = "<group>"; };
 		9F6ABC541BFC747500A199A2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../Reachability.swift; sourceTree = "<group>"; };
+		9F8F233A1C4E64DF003D20C3 /* SurveyQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewController.swift; sourceTree = "<group>"; };
 		9F972C491C22F21E008C4CD8 /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		9FB933C61BF5FB0D00CA4B22 /* InternetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetRequest.swift; path = ../InternetRequest.swift; sourceTree = "<group>"; };
 		9FB933C91BF6009B00CA4B22 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
 		9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
+		9FBED46F1C57A5BD0000EE24 /* SurveyAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyAnswer.swift; sourceTree = "<group>"; };
 		EE7E9ABE1BBA734900391478 /* Topcoder-FunSeries-SurveyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Topcoder-FunSeries-SurveyApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7E9AC21BBA734900391478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE7E9AC31BBA734900391478 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +86,10 @@
 		9F8E6F071BF480D4005827A0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9F60420E1BF4491200DDE459 /* SurveyItem.swift */,
+				9F0131F71C5A26FD00BEBC25 /* BaseProtocol.swift */,
 				9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */,
+				9F60420E1BF4491200DDE459 /* SurveyItem.swift */,
+				9FBED46F1C57A5BD0000EE24 /* SurveyAnswer.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 				EE7E9AC31BBA734900391478 /* AppDelegate.swift */,
 				EE7E9AC51BBA734900391478 /* ViewController.swift */,
 				9F56A9E41C22D3170030725A /* DescriptionViewController.swift */,
+				9F8F233A1C4E64DF003D20C3 /* SurveyQuestionViewController.swift */,
 				EE7E9AC71BBA734900391478 /* Main.storyboard */,
 				EE7E9ACA1BBA734900391478 /* Images.xcassets */,
 				EE7E9ACC1BBA734900391478 /* LaunchScreen.xib */,
@@ -265,8 +274,11 @@
 			files = (
 				9F60420F1BF4491200DDE459 /* SurveyItem.swift in Sources */,
 				9FB933CA1BF6009B00CA4B22 /* cell.swift in Sources */,
+				9F8F233B1C4E64DF003D20C3 /* SurveyQuestionViewController.swift in Sources */,
+				9FBED4701C57A5BD0000EE24 /* SurveyAnswer.swift in Sources */,
 				9FB933CC1BF60A1F00CA4B22 /* BaseItem.swift in Sources */,
 				9FB933C71BF5FB0D00CA4B22 /* InternetRequest.swift in Sources */,
+				9F0131F81C5A26FD00BEBC25 /* BaseProtocol.swift in Sources */,
 				EE7E9AC61BBA734900391478 /* ViewController.swift in Sources */,
 				EE7E9AC41BBA734900391478 /* AppDelegate.swift in Sources */,
 				9F56A9E51C22D3170030725A /* DescriptionViewController.swift in Sources */,

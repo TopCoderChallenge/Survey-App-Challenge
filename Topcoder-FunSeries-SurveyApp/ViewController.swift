@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate
+{
     //The objecy used for accessing CoreData
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var i: Int = 0;
     var flag: Bool = false;
     var tool:Tool?;
+    var surveyItemCD: SurveyItem = SurveyItem.Instance();
 
     @IBOutlet var SurveyTableSearchBar: UISearchBar!;
     @IBOutlet var Label: UILabel!;
@@ -28,6 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        surveyItemCD.entityName = "SurveyItem";
         SurveyTable.delegate = self;
         SurveyTable.dataSource = self;
         tool = Tool.instance();
@@ -62,7 +65,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var desc: String = "";
         
         let queryCondition: NSPredicate = NSPredicate(format: "id != %i", 0);
-        result = SurveyItem.select(managedObjectContext, condition: queryCondition);
+        result = surveyItemCD.select(managedObjectContext, condition: queryCondition) as! [SurveyItem];
         
         for item: NSDictionary in data as! [NSDictionary] {
             surveyItems = searchById(result, id: item["id"] as! Int);
@@ -77,7 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
             else {
-                _ = SurveyItem.insert(managedObjectContext, info: item);
+                _ = surveyItemCD.insert(managedObjectContext, info: item);
             }
         }
         if (managedObjectContext.hasChanges) {
@@ -115,7 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         // Get datas from CoreData which isdeleted field is false
         let queryCondition: NSPredicate = NSPredicate(format: "isdeleted = %i", 0);
-        returnData = SurveyItem.select(managedObjectContext, condition: queryCondition);
+        returnData = surveyItemCD.select(managedObjectContext, condition: queryCondition) as! [SurveyItem];
         
         return returnData;
     }
@@ -151,7 +154,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Set isdeleted field to 1 of CoreData
         let queryCondition: NSPredicate = NSPredicate(format: "id = %i", cell.id);
-        SurveyItem.logicDelete(managedObjectContext, condition: queryCondition);
+        surveyItemCD.logicDelete(managedObjectContext, condition: queryCondition);
         
         // Delete row from table view
         tableData.removeAtIndex(indexPath.row);

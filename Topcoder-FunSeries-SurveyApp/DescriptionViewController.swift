@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class DescriptionViewController: UIViewController {
+class DescriptionViewController: UIViewController
+{
     @IBOutlet var text: UITextView!;
     @IBOutlet var naviBar: UINavigationBar!;
     @IBOutlet var navBarItem: UINavigationItem!;
@@ -35,6 +36,18 @@ class DescriptionViewController: UIViewController {
                 self.navBarItem.title = info["title"] as? String;
                 break;
             }
+        }
+    }
+    
+    @IBAction func goQuestionSegue(sender: UIButton) {
+        self.performSegueWithIdentifier("question", sender: self);
+    }
+    
+    //MARK: - Send value to destination viewcontroller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "question") {
+            let destinationController: SurveyQuestionViewController = segue.destinationViewController as! SurveyQuestionViewController;
+            destinationController.surveyId = (sender as! DescriptionViewController).itemId;
         }
     }
     

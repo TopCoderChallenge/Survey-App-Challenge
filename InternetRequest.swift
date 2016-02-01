@@ -9,7 +9,8 @@
 import Foundation
 import SystemConfiguration
 
-class InternetRequest {
+class InternetRequest
+{
     static var IR: InternetRequest? = nil;
     
     static func instance() -> InternetRequest {

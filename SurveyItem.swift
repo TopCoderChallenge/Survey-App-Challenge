@@ -16,8 +16,17 @@ class SurveyItem: BaseItem {
     @NSManaged var desc: String;
     @NSManaged var isdeleted: Bool;
     
-    class func insert(moc: NSManagedObjectContext, info: NSDictionary) -> SurveyItem {
-        let newItem: SurveyItem = NSEntityDescription.insertNewObjectForEntityForName("SurveyItem", inManagedObjectContext: moc) as! SurveyItem;
+    static var instance: SurveyItem? = nil;
+    
+    static func Instance() -> SurveyItem {
+        if (instance == nil) {
+            instance = SurveyItem();
+        }
+        return instance!;
+    }
+    
+    func insert(moc: NSManagedObjectContext, info: NSDictionary) -> SurveyItem {
+        let newItem: SurveyItem = NSEntityDescription.insertNewObjectForEntityForName(self.entityName!, inManagedObjectContext: moc) as! SurveyItem;
         newItem.id = info["id"] as! Int;
         newItem.title = info["title"] as! String;
         newItem.desc = info["description"] as! String;
@@ -25,8 +34,8 @@ class SurveyItem: BaseItem {
         return newItem;
     }
     
-    class func update(moc: NSManagedObjectContext, condition: NSPredicate, values: NSDictionary) {
-        let items: [SurveyItem] = select(moc, condition: condition);
+    func update(moc: NSManagedObjectContext, condition: NSPredicate, values: NSDictionary) {
+        let items: [SurveyItem] = select(moc, condition: condition) as! [SurveyItem];
         for item: SurveyItem in items {
             item.isdeleted = true;
         }
@@ -38,8 +47,8 @@ class SurveyItem: BaseItem {
         }
     }
     
-    class func logicDelete(moc: NSManagedObjectContext, condition: NSPredicate) {
-        let items: [SurveyItem] = select(moc, condition: condition);
+    func logicDelete(moc: NSManagedObjectContext, condition: NSPredicate) {
+        let items: [SurveyItem] = select(moc, condition: condition) as! [SurveyItem];
         for item: SurveyItem in items {
             item.isdeleted = true;
         }

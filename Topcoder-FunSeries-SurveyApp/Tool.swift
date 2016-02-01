@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Tool {
+class Tool
+{
     static var tool: Tool? = nil;
     
     static func instance() -> Tool {
