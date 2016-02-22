@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GhF-Z3-Fo3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GhF-Z3-Fo3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -294,7 +294,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Finish"/>
                                         <connections>
-                                            <action selector="backToDescription:" destination="0Qh-jR-ZVO" eventType="touchUpInside" id="5lO-6b-Cve"/>
+                                            <action selector="onFinishClicked:" destination="0Qh-jR-ZVO" eventType="touchUpInside" id="WUc-fD-Pt6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -355,6 +355,7 @@
                         <outlet property="saveButton" destination="Xuu-b7-ggJ" id="ZLf-Ii-DTx"/>
                         <outlet property="totalCountLabel" destination="Brk-u0-9JZ" id="feA-yN-wJt"/>
                         <segue destination="shW-dM-21g" kind="show" identifier="questionToDescription" id="qC6-Py-2rH"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="questionToList" id="6vC-E6-xe0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfR-MN-gTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,6 +365,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qC6-Py-2rH"/>
-        <segue reference="Y9i-OG-j3Y"/>
+        <segue reference="6vC-E6-xe0"/>
     </inferredMetricsTieBreakers>
 </document>

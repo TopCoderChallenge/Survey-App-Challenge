@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class SurveyQuestionViewController: UIViewController, UITextViewDelegate
 {
@@ -30,9 +31,14 @@ class SurveyQuestionViewController: UIViewController, UITextViewDelegate
     var questionId: Int = 0;
     var questionIndex: Int = 0;
     var answerIndex: Int = 0;
+    var myRootRef: Firebase = Firebase(url: "https://fiery-heat-6099.firebaseio.com/Data/Answers");
+    var alert: UIAlertController? = nil;
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        if (alert != nil) {
+            alert = nil;
+        }
         surveyAnswerCD.entityName = "SurveyAnswer";
         tool = Tool.instance();
         leftButton?.enabled = false;
@@ -42,6 +48,19 @@ class SurveyQuestionViewController: UIViewController, UITextViewDelegate
         self.questionText?.layer.cornerRadius = 8;
         self.answerText?.layer.borderWidth = 1;
         self.answerText?.layer.cornerRadius = 8;
+        
+        // Set delegate for FireBase
+        self.myRootRef.observeEventType(.ChildChanged, withBlock: { snapshot in
+            print(snapshot.value);
+            if (self.alert == nil) {
+                self.alert = UIAlertController(title: "Finshed", message: "The data has been stored in FireBase!", preferredStyle: UIAlertControllerStyle.Alert);
+                let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+                    self.performSegueWithIdentifier("questionToList", sender: self);
+                });
+                self.alert?.addAction(okAction);
+                self.presentViewController(self.alert!, animated: true, completion: nil);
+            }
+        });
         
         if (InternetRequest.instance().checkInternetAvailable()) {
             let jsonData: NSData = tool!.getJSONFromRemote("http://demo2394932.mockable.io/wizard");
@@ -124,6 +143,16 @@ class SurveyQuestionViewController: UIViewController, UITextViewDelegate
         
     }
     
+    func sendAnswersToRemote() {
+        var storeData: [NSDictionary] = [];
+        for (_, answer) in self.answers {
+            let ans: NSDictionary = ["surveyId": answer.survey_id, "questionId": answer.id, "answer": answer.content];
+            storeData.append(ans);
+        }
+        // The parent node name likes surveyId_1
+        myRootRef.childByAppendingPath("surveyId_" + String (self.surveyId)).setValue(storeData);
+    }
+    
     //MARK: - IBAction
     @IBAction func changeQuestion(sender: AnyObject) {
         var isRight: Bool = true;
@@ -147,6 +176,10 @@ class SurveyQuestionViewController: UIViewController, UITextViewDelegate
     
     @IBAction func backToDescription(sender: AnyObject) {
         self.performSegueWithIdentifier("questionToDescription", sender: self);
+    }
+    
+    @IBAction func onFinishClicked(sender: UIButton) {
+        self.sendAnswersToRemote();
     }
     
     @IBAction func CloseKeyBoard(sender: AnyObject) {

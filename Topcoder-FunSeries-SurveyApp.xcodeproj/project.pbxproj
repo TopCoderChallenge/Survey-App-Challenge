@@ -18,6 +18,12 @@
 		9FB933C71BF5FB0D00CA4B22 /* InternetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB933C61BF5FB0D00CA4B22 /* InternetRequest.swift */; };
 		9FB933CA1BF6009B00CA4B22 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB933C91BF6009B00CA4B22 /* cell.swift */; };
 		9FB933CC1BF60A1F00CA4B22 /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */; };
+		9FBB1E741C6221DD0026CE85 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB1E731C6221DD0026CE85 /* libicucore.tbd */; };
+		9FBB1E761C6221ED0026CE85 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB1E751C6221ED0026CE85 /* libc++.tbd */; };
+		9FBB1E781C6221FA0026CE85 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB1E771C6221FA0026CE85 /* CFNetwork.framework */; };
+		9FBB1E7A1C6222080026CE85 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB1E791C6222080026CE85 /* Security.framework */; };
+		9FBB1E7C1C6222190026CE85 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB1E7B1C6222190026CE85 /* SystemConfiguration.framework */; };
+		9FBB1E821C6222A20026CE85 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB1E811C6222A20026CE85 /* Firebase.framework */; };
 		9FBED4701C57A5BD0000EE24 /* SurveyAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBED46F1C57A5BD0000EE24 /* SurveyAnswer.swift */; };
 		EE7E9AC41BBA734900391478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E9AC31BBA734900391478 /* AppDelegate.swift */; };
 		EE7E9AC61BBA734900391478 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E9AC51BBA734900391478 /* ViewController.swift */; };
@@ -50,6 +56,12 @@
 		9FB933C61BF5FB0D00CA4B22 /* InternetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternetRequest.swift; path = ../InternetRequest.swift; sourceTree = "<group>"; };
 		9FB933C91BF6009B00CA4B22 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
 		9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
+		9FBB1E731C6221DD0026CE85 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		9FBB1E751C6221ED0026CE85 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9FBB1E771C6221FA0026CE85 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9FBB1E791C6222080026CE85 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9FBB1E7B1C6222190026CE85 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9FBB1E811C6222A20026CE85 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		9FBED46F1C57A5BD0000EE24 /* SurveyAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyAnswer.swift; sourceTree = "<group>"; };
 		EE7E9ABE1BBA734900391478 /* Topcoder-FunSeries-SurveyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Topcoder-FunSeries-SurveyApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7E9AC21BBA734900391478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +81,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBB1E7C1C6222190026CE85 /* SystemConfiguration.framework in Frameworks */,
+				9FBB1E7A1C6222080026CE85 /* Security.framework in Frameworks */,
+				9FBB1E781C6221FA0026CE85 /* CFNetwork.framework in Frameworks */,
+				9FBB1E821C6222A20026CE85 /* Firebase.framework in Frameworks */,
+				9FBB1E761C6221ED0026CE85 /* libc++.tbd in Frameworks */,
+				9FBB1E741C6221DD0026CE85 /* libicucore.tbd in Frameworks */,
 				9F6041C91BF440DA00DDE459 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,8 +123,14 @@
 		EE7E9AB51BBA734900391478 = {
 			isa = PBXGroup;
 			children = (
-				EE7E9AD61BBA734900391478 /* Topcoder-FunSeries-SurveyAppTests */,
+				9FBB1E811C6222A20026CE85 /* Firebase.framework */,
+				9FBB1E7B1C6222190026CE85 /* SystemConfiguration.framework */,
+				9FBB1E791C6222080026CE85 /* Security.framework */,
+				9FBB1E771C6221FA0026CE85 /* CFNetwork.framework */,
+				9FBB1E751C6221ED0026CE85 /* libc++.tbd */,
+				9FBB1E731C6221DD0026CE85 /* libicucore.tbd */,
 				9F6041C81BF440DA00DDE459 /* CoreData.framework */,
+				EE7E9AD61BBA734900391478 /* Topcoder-FunSeries-SurveyAppTests */,
 				EE7E9AC01BBA734900391478 /* Topcoder-FunSeries-SurveyApp */,
 				EE7E9ABF1BBA734900391478 /* Products */,
 			);
@@ -414,6 +438,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Topcoder-FunSeries-SurveyApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.topcoder.$(PRODUCT_NAME:rfc1034identifier)";
@@ -428,6 +456,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Topcoder-FunSeries-SurveyApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.topcoder.$(PRODUCT_NAME:rfc1034identifier)";
