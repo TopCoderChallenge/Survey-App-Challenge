@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				9F0131F71C5A26FD00BEBC25 /* BaseProtocol.swift */,
-				9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */,
 				9F60420E1BF4491200DDE459 /* SurveyItem.swift */,
+				9FB933CB1BF60A1F00CA4B22 /* BaseItem.swift */,
 				9FBED46F1C57A5BD0000EE24 /* SurveyAnswer.swift */,
 			);
 			name = Data;

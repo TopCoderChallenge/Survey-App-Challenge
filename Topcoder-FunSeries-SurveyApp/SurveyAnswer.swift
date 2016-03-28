@@ -14,6 +14,7 @@ class SurveyAnswer: BaseItem
     @NSManaged var id: Int;
     @NSManaged var survey_id: Int;
     @NSManaged var content: String;
+    @NSManaged var img: String;
     
     static var instance: SurveyAnswer? = nil;
     
